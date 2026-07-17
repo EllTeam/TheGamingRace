@@ -1,2 +1,4 @@
-# TGR.github.io
-TGR stands for The Gaming Race
+# The Gaming Race
+
+
+
