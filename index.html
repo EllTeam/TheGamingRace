@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TGR - The Gaming Race</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        #game {
+            width: 800px;
+            height: 450px;
+            background: #222;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid white;
+        }
+
+        #player {
+            width: 40px;
+            height: 40px;
+            background: cyan;
+            position: absolute;
+            bottom: 20px;
+            left: 380px;
+        }
+
+        #score {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎮 TGR - The Gaming Race</h1>
+<div id="score">Score: 0</div>
+
+<div id="game">
+    <div id="player"></div>
+</div>
+
+<script>
+const player = document.getElementById("player");
+const scoreText = document.getElementById("score");
+
+let x = 380;
+let score = 0;
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+        x -= 20;
+    }
+
+    if (e.key === "ArrowRight") {
+        x += 20;
+    }
+
+    if (x < 0) x = 0;
+    if (x > 760) x = 760;
+
+    player.style.left = x + "px";
+});
+
+setInterval(() => {
+    score++;
+    scoreText.innerHTML = "Score: " + score;
+}, 1000);
+</script>
+
+</body>
+</html>
